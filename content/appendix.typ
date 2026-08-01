@@ -17,4 +17,4 @@
 #include "appendix/algo/application.typ"
 
 = Évaluation de l'UE stage de fin d'études par le jury
-// TODO(appendix): stub — the 3 jury PDF scans are not yet embedded.
+#include "appendix/evaluation.typ"
