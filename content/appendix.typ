@@ -7,8 +7,7 @@
 #include "appendix/etude_risque/main.typ"
 
 = Un peu d'Histoire <annexe:histoire>
-// TODO(appendix): stub — replaced by the real "histoire" appendix sections
-// once that chapter is written.
+#include "appendix/histoire/main.typ"
 
 = Algorithmes & Implémentations
 // TODO(appendix): stub — placeholder anchors so forward-references from
