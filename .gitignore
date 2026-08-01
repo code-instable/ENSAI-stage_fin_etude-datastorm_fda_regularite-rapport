@@ -1,3 +1,10 @@
+## Typst build output (see justfile) — out/rapport.pdf itself is the
+## pre-existing, git-tracked LaTeX build artifact and is intentionally not
+## matched here.
+/out/rapport-typst.pdf
+/out/*.png
+/out/*.svg
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
