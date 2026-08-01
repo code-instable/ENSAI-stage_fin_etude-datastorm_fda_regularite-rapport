@@ -1,0 +1,493 @@
+# Hayagriva bibliography, converted from src/bibliography/main.bib with the
+# `tohaya` converter (crates.io, built on the official `hayagriva` crate) and
+# manually audited against the source .bib. Citation keys are preserved
+# verbatim from the BibTeX source. Corrections applied during the audit are
+# documented in the final report; in summary:
+#  - VAR_paper: the source author field "James H. Stock \& Mark W. Watson"
+#    uses "\&" instead of BibTeX's "and" separator, so BibTeX/tohaya parsed
+#    it as a single garbled person name. Restored as two authors (a real,
+#    identifiable 2001 JEP paper by Stock and Watson).
+#  - maissoro-SmoothnessFTSweakDep: the source author field
+#    "Maissoro, Vimond, Patilea" (commas, no "and") was likewise parsed as
+#    one malformed name. Restored as three authors, surnames only, in the
+#    order given (no given names appear in this specific record).
+#  - muller2005generalized / chen2011single: the source has no `journal`
+#    field; the empty `parent: periodical` produced by conversion was
+#    dropped rather than left dangling.
+#  - HsingEubankTheoreticalFoundationsOfFDA: the source has an empty
+#    `editor = {}`; dropped rather than kept as an empty field.
+#  - gourdon2020maths-dense-non-deriv: `pages = {398—399 , ex4 : 401}` is
+#    prose, not a numeric range, and is already repeated in `note`; kept
+#    only in `note` instead of an invalid `page-range`.
+#  - estimation-dependent-strong-mixing: source has both `date = {2020/10/01}`
+#    and `year = {2020}`; the more precise `date` is used. Source `isbn =
+#    {1572-9311}` is an ISSN-shaped value (plain BibTeX has no `issn` field,
+#    so authors conventionally overload `isbn`); recorded as `issn`. Its
+#    abstract contained a mangled copy-paste artifact
+#    ("{\$}{\$}{}$\backslash${} alpha {\$}{\$}-mixing"); normalized to the
+#    unambiguous "α-mixing" it was clearly meant to render as.
+#  - Protected-capitalization braces (`{é}`, `{É}`, `{Weakly dependent...}`)
+#    and literal `\href{}{}` / `\og`/`\fg` / `\colorize{}` LaTeX markup left
+#    over in `note`/title/organization fields were expanded to plain text.
+#  - arXiv `primaryclass` (no direct Hayagriva field) kept as a short note.
+#  - `weakly-dependent-functional-data` and `10.1214/09-AOS768` are the same
+#    paper under two different citation keys, both actually used with
+#    `\cite` in the report; both are kept as separate entries, unmodified,
+#    exactly as in the source .bib.
+
+VAR_paper:
+  type: article
+  title: Vector Autoregressions
+  author:
+    - Stock, James H.
+    - Watson, Mark W.
+  date: 2001
+  note: "page 101 - DOI : https://doi.org/10.1257/jep.15.4.101 - télécharger (https://pubs.aeaweb.org/doi/pdf/10.1257/jep.15.4.101)"
+  parent:
+    type: periodical
+    title: Journal of the American Statistical Association | Journal of Economic Perspective
+    issue: 4
+    volume: 15
+
+time_series_brief_history:
+  type: article
+  title: "Time Series and Forecasting: Brief History and Future Research"
+  author: Tsay, Ruey S.
+  date: 2000
+  note: "DOI : https://doi.org/10.2307/2669408"
+  parent:
+    type: periodical
+    title: Journal of the American Statistical Association
+    issue: 450
+    volume: 95
+
+evans2000approximating:
+  type: book
+  title: Approximating integrals via Monte Carlo and deterministic methods
+  author:
+    - Evans
+    - Swartz
+  date: 2000
+  publisher: Oxford University Press
+  volume: 20
+  parent:
+    type: book
+    title: Oxford Statistical Science Series
+
+karhunen1946spektraltheorie:
+  type: article
+  title: Zur spektraltheorie stochastischer prozesse
+  author: Karhunen, Kari
+  date: 1946
+  parent:
+    type: periodical
+    title: Ann. Acad. Sci. Fennicae, AI
+    volume: 34
+
+kokoszka2017introduction:
+  type: book
+  title: Introduction to functional data analysis
+  author:
+    - Kokoszka, Piotr
+    - Reimherr, Matthew
+  date: 2017
+  publisher: CRC press
+
+ramsay1982data:
+  type: article
+  title: When the data are functions
+  author: Ramsay, James O
+  date: 1982
+  page-range: 379-396
+  parent:
+    type: periodical
+    title: Psychometrika
+    publisher: Springer-Verlag
+    volume: 47
+
+dauxois1982asymptotic:
+  type: article
+  title: "Asymptotic theory for the principal component analysis of a vector random function: some applications to statistical inference"
+  author:
+    - Dauxois, Jacques
+    - Pousse, Alain
+    - Romain, Yves
+  date: 1982
+  page-range: 136-154
+  parent:
+    type: periodical
+    title: Journal of multivariate analysis
+    publisher: Elsevier
+    issue: 1
+    volume: 12
+
+dauxois1976analyses:
+  type: thesis
+  title: "Les analyses factorielles en calcul des probabiblités et en statistique: Essai d'étude synthétique"
+  author:
+    - Dauxois, Jacques
+    - Pousse, Alain
+  date: 1976
+  organization: Éditeur inconnu
+
+cardot1999functional:
+  type: article
+  title: Functional linear model
+  author:
+    - Cardot, Hervé
+    - Ferraty, Frédéric
+    - Sarda, Pascal
+  date: 1999
+  page-range: 11-22
+  parent:
+    type: periodical
+    title: Statistics & Probability Letters
+    publisher: Elsevier
+    issue: 1
+    volume: 45
+
+ramsay1991some:
+  type: article
+  title: Some tools for functional data analysis
+  author:
+    - Ramsay, James O
+    - Dalzell, CJ1125714
+  date: 1991
+  page-range: 539-561
+  parent:
+    type: periodical
+    title: "Journal of the Royal Statistical Society: Series B (Methodological)"
+    publisher: Wiley Online Library
+    issue: 3
+    volume: 53
+
+james2002generalized:
+  type: article
+  title: Generalized linear models with functional predictors
+  author: James, Gareth M
+  date: 2002
+  page-range: 411-432
+  parent:
+    type: periodical
+    title: "Journal of the Royal Statistical Society: Series B (Statistical Methodology)"
+    publisher: Wiley Online Library
+    issue: 3
+    volume: 64
+
+muller2005generalized:
+  type: article
+  title: Generalized functional linear models
+  author:
+    - Müller, Hans-Georg
+    - Stadtmüller, Ulrich
+  date: 2005
+
+chen2011single:
+  type: article
+  title: Single and multiple index functional regression models with nonparametric link
+  author:
+    - Chen, Dong
+    - Hall, Peter
+    - Müller, Hans-Georg
+  date: 2011
+
+sharpe1963simplified:
+  type: article
+  title: A simplified model for portfolio analysis
+  author: Sharpe, William F
+  date: 1963
+  page-range: 277-293
+  parent:
+    type: periodical
+    title: Management science
+    publisher: INFORMS
+    issue: 2
+    volume: 9
+
+hristache2001direct:
+  type: article
+  title: Direct estimation of the index coefficient in a single-index model
+  author:
+    - Hristache, Marian
+    - Juditsky, Anatoli
+    - Spokoiny, Vladimir
+  date: 2001
+  page-range: 595-623
+  parent:
+    type: periodical
+    title: Annals of Statistics
+    publisher: JSTOR
+
+stone1986generalized:
+  type: article
+  title: "[Generalized additive models]: comment"
+  author: Stone, Charles J
+  date: 1986
+  page-range: 312-314
+  parent:
+    type: periodical
+    title: Statistical Science
+    publisher: JSTOR
+    issue: 3
+    volume: 1
+
+lin1999inference:
+  type: article
+  title: Inference in generalized additive mixed models by using smoothing splines
+  author:
+    - Lin, Xihong
+    - Zhang, Daowen
+  date: 1999
+  page-range: 381-400
+  parent:
+    type: periodical
+    title: "Journal of the Royal Statistical Society Series B: Statistical Methodology"
+    publisher: Oxford University Press
+    issue: 2
+    volume: 61
+
+bosq2000linear:
+  type: book
+  title: "Linear processes in function spaces: theory and applications"
+  author: Bosq, Denis
+  date: 2000
+  publisher: Springer Science & Business Media
+  volume: 149
+
+wang2016functional:
+  type: article
+  title: Functional data analysis
+  author:
+    - Wang, Jane-Ling
+    - Chiou, Jeng-Min
+    - Müller, Hans-Georg
+  date: 2016
+  page-range: 257-295
+  note: "télécharger (https://anson.ucdavis.edu/~mueller/fdarev1.pdf)"
+  parent:
+    type: periodical
+    title: Annual Review of Statistics and its application
+    publisher: Annual Reviews
+    volume: 3
+
+gourdon2020maths-dense-non-deriv:
+  type: book
+  title: Les maths en tête. Analyse - 3e édition
+  author: Gourdon, X.
+  date: 2020
+  publisher: Editions Ellipses
+  url: https://books.google.fr/books?id=3iFEEAAAQBAJ
+  serial-number:
+    isbn: "9782340056992"
+  note: "Théorème et Applications : densité des fonctions dérivables nulle part - pages : 398—399 , ex4 : 401"
+
+golovkine2021adaptive:
+  type: misc
+  title: "Adaptive estimation of irregular mean and covariance functions [revised]"
+  author:
+    - Golovkine, Steven
+    - Klutchnikoff, Nicolas
+    - Patilea, Valentin
+  date: 2023
+  serial-number:
+    arxiv: "2108.06507"
+  note: "arXiv category: math.ST"
+
+capasso2015introduction:
+  type: book
+  title: "An Introduction to Continuous-Time Stochastic Processes: Theory, Models, and Applications to Finance, Biology, and Medicine"
+  author:
+    - Capasso, V.
+    - Bakstein, D.
+  date: 2015
+  publisher: Springer New York
+  url: https://books.google.fr/books?id=OJy4CQAAQBAJ
+  serial-number:
+    isbn: "9781493927579"
+  parent:
+    type: book
+    title: Modeling and Simulation in Science, Engineering and Technology
+
+golovkineRegularityOnlineEstimationNoisyCurve:
+  type: article
+  title: Learning the smoothness of noisy curves with application to online curve estimation
+  author:
+    - Golovkine, Steven
+    - Klutchnikoff, Nicolas
+    - Patilea, Valentin
+  date: 2022-01
+  url: http://dx.doi.org/10.1214/22-EJS1997
+  serial-number:
+    doi: 10.1214/22-ejs1997
+    issn: "1935-7524"
+  parent:
+    type: periodical
+    title: Electronic Journal of Statistics
+    publisher: Institute of Mathematical Statistics
+    issue: 1
+    volume: 16
+
+maissoro-SmoothnessFTSweakDep:
+  type: article
+  title: Learning Smoothness of Functional Times Series under Weak Dependency Assumption
+  author:
+    - Maissoro
+    - Vimond
+    - Patilea
+  date: 2023
+  note: "version « work in progress » 07/2023 — not available yet"
+
+engie-data-conso-moy-par-an:
+  type: web
+  title: Quelle est la consommation d'électricité par personne dans un foyer ?
+  author: ENGIE
+  date: 2022
+  url: https://particuliers.engie.fr/electricite/conseils-electricite/conseils-tarifs-electricite/consommation-moyenne-electricite-personne.html#paradeux
+  access-date: 2022-09-21
+  note: "[lire en ligne] (https://particuliers.engie.fr/electricite/conseils-electricite/conseils-tarifs-electricite/consommation-moyenne-electricite-personne.html#paradeux)"
+
+mallat-wavelet-course-ens-wavelet-zoom:
+  type: web
+  title: Wavelet Tour — Part VI — Wavelet Zoom
+  author: Mallat, Stéphane
+  url: https://www.di.ens.fr/~mallat/College/WaveletTour-6.1.pdf
+  note: "[lire en ligne] (https://www.di.ens.fr/~mallat/College/WaveletTour-6.1.pdf)"
+
+R-MASS:
+  type: web
+  title: "MASS R Package Documentation | Support Functions and Datasets for Venables and Ripley's MASS"
+  author: Ripley, Brian
+  url: https://cran.r-project.org/web/packages/MASS/MASS.pdf
+  note: "[lire en ligne] (https://cran.r-project.org/web/packages/MASS/MASS.pdf)"
+
+saporta-fda-workshop-lille:
+  type: web
+  title: Historical elements of functional data analysis
+  author: Saporta, Gilbert
+  url: https://web.archive.org/web/20240325190647/https://fda-lille.sciencesconf.org/data/program/Gilbert_Saporta_abstract.pdf
+  note: "[lire en ligne] (https://web.archive.org/web/20240325190647/https://fda-lille.sciencesconf.org/data/program/Gilbert_Saporta_abstract.pdf)"
+
+mfbm-howrich:
+  type: article
+  title: How rich is the class of multifractional Brownian motions?
+  author:
+    - Stoev, Stilian A.
+    - Taqqu, Murad S.
+  date: 2006
+  page-range: 200-221
+  url: https://www.sciencedirect.com/science/article/pii/S0304414905001377
+  serial-number:
+    doi: 10.1016/j.spa.2005.09.007
+    issn: "0304-4149"
+  abstract: "The multifractional Brownian motion (MBM) processes are locally self-similar Gaussian processes. They extend the classical fractional Brownian motion processes BH={BH(t)}t∈R by allowing their self-similarity parameter H∈(0,1) to depend on time. Two types of MBM processes were introduced independently by Peltier and Lévy-Vehel [Multifractional Brownian motion: definition and preliminary results, Technical Report 2645, Institut National de Recherche en Informatique et an Automatique, INRIA, Le Chesnay, France, 1995] and Benassi, Jaffard, Roux [Elliptic Gaussian random processes, Rev. Mat. Iber. 13(1) (1997) 19–90] by using time-domain and frequency-domain integral representations of the fractional Brownian motion, respectively. Their correspondence was studied by Cohen [From self-similarity to local self-similarity: the estimation problem, in: M. Dekking, J.L. Véhel, E. Lutton, C. Tricot (Eds.), Fractals: Theory and Applications in Engineering, Springer, Berlin, 1999]. Contrary to what has been stated in the literature, we show that these two types of processes have different correlation structures when the function H(t) is non-constant. We focus on a class of MBM processes parameterized by (a+,a-)∈R2, which contains the previously introduced two types of processes as special cases. We establish the connection between their time- and frequency-domain integral representations and obtain explicit expressions for their covariances. We show, that there are non-constant functions H(t) for which the correlation structure of the MBM processes depends non-trivially on the value of (a+,a-) and hence, even for a given function H(t), there are an infinite number of MBM processes with essentially different distributions."
+  parent:
+    type: periodical
+    title: Stochastic Processes and their Applications
+    issue: 2
+    volume: 116
+
+estimation-dependent-strong-mixing:
+  type: article
+  title: Recursive nonparametric regression estimation for dependent strong mixing functional data
+  author: Slaoui, Yousri
+  date: 2020-10-01
+  page-range: 665-697
+  url: https://doi.org/10.1007/s11203-020-09223-3
+  serial-number:
+    doi: 10.1007/s11203-020-09223-3
+    issn: "1572-9311"
+  abstract: "In the present paper, we extend the work of Slaoui (Stat Sin 30:417–437, 2020) in the case of strong mixing data. Since, we are interested in nonparametric regression estimation, we focus on well adapted dependence structures based on mixing type conditions. We study the properties of these regression estimators and compare them with the nonparametric non-recursive regression estimator. The bias, variance and mean squared error are computed explicitly. We showed that using a selected wild bootstrap bandwidth procedure and a special stepsize, our proposed recursive regression estimators allowed us to obtain quite similar results compared to the non-recursive regression estimator under α-mixing condition in terms of estimation error and much better in terms of computational costs."
+  parent:
+    type: periodical
+    title: Statistical Inference for Stochastic Processes
+    issue: 3
+    volume: 23
+
+weakly-dependent-functional-data:
+  type: article
+  title: Weakly dependent functional data
+  author:
+    - Hörmann, Siegfried
+    - Kokoszka, Piotr
+  date: 2010
+  page-range: 1845-1884
+  url: https://doi.org/10.1214/09-AOS768
+  serial-number:
+    doi: 10.1214/09-AOS768
+  parent:
+    type: periodical
+    title: The Annals of Statistics
+    publisher: Institute of Mathematical Statistics
+    issue: 3
+    volume: 38
+
+dieker2004simulation:
+  type: thesis
+  title: Simulation of fractional Brownian motion
+  author: Dieker, Ton
+  date: 2004
+  organization: "Masters Thesis, Department of Mathematical Sciences, University of Twente …"
+
+HsingEubankTheoreticalFoundationsOfFDA:
+  type: book
+  title: "Theoretical Foundations of Functional Data Analysis, with an Introduction to Linear Operators"
+  author:
+    - Hsing, T.
+    - Eubank, R.
+  date: 2015
+  publisher: John Wiley & Sons, Ltd
+  note: "Chapitre 7 : Random elements in a Hilbert space [introduction]"
+
+wei2023adaptive:
+  type: misc
+  title: Adaptive functional principal components analysis
+  author:
+    - Wei, Sunny Wang Guang
+    - Patilea, Valentin
+    - Klutchnikoff, Nicolas
+  date: 2023
+  serial-number:
+    arxiv: "2306.16091"
+  note: "arXiv category: stat.ME"
+
+kontorovich2008strong:
+  type: misc
+  title: A Strong Law of Large Numbers for Strongly Mixing Processes
+  author:
+    - Kontorovich, Aryeh
+    - Brockwell, Anthony
+  date: 2008
+  serial-number:
+    arxiv: "0807.4665"
+  note: "arXiv category: math.PR"
+
+10.1214/09-AOS768:
+  type: article
+  title: Weakly dependent functional data
+  author:
+    - Hörmann, Siegfried
+    - Kokoszka, Piotr
+  date: 2010
+  page-range: 1845-1884
+  url: https://doi.org/10.1214/09-AOS768
+  serial-number:
+    doi: 10.1214/09-AOS768
+  parent:
+    type: periodical
+    title: The Annals of Statistics
+    publisher: Institute of Mathematical Statistics
+    issue: 3
+    volume: 38
+
+maissoro2024adaptiveestimationweaklydependent:
+  type: misc
+  title: Adaptive estimation for Weakly Dependent Functional Times Series
+  author:
+    - Maissoro, Hassan
+    - Patilea, Valentin
+    - Vimond, Myriam
+  date: 2024
+  url: https://arxiv.org/abs/2403.13706
+  serial-number:
+    arxiv: "2403.13706"
+  note: "arXiv category: math.ST"
